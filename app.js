@@ -47,6 +47,7 @@ function render() {
   document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t[el.dataset.i18n]; });
   document.getElementById("lang").textContent = t.lang;
   document.getElementById("theme").textContent = t.theme;
+  document.querySelector("[download]").href = `cv-${lang}.pdf`;
   const open = rows.querySelector("[aria-expanded=true]")?.dataset.id;
   rows.innerHTML = projects.map((p) => {
     const c = p[lang];
