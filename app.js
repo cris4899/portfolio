@@ -9,7 +9,7 @@ const projects = [
     id: "papeo", year: "2026", stack: "Expo, Next.js, Supabase, TypeScript",
     es: { role: "App móvil y panel", desc: "Monorepo con app móvil (Expo), panel de administración y landing (Next.js), sobre Supabase. Construido con especificaciones por fases y pruebas end-to-end." },
     en: { role: "Mobile app and dashboard", desc: "Monorepo with a mobile app (Expo), an admin dashboard and a landing page (Next.js), on Supabase. Built spec-first, with end-to-end tests." },
-    live: "https://papeo-landing.vercel.app", repo: "",
+    live: "https://www.mipapeo.es", app: "https://app.mipapeo.es", repo: "",
   },
   {
     id: "vecinaria", year: "2026", stack: "React, Vite, Expo, Supabase, Tailwind",
@@ -27,8 +27,8 @@ const projects = [
 const names = { webestudio: "WebEstudio", papeo: "Papeo", vecinaria: "Vecinaria", jaquecapp: "JaqueCapp" };
 
 const i18n = {
-  es: { "nav.work": "Proyectos", "nav.contact": "Contacto", "hero.role": "Desarrollo web y apps, experto en IA. Diseño, construyo y publico productos completos con desarrollo guiado por especificaciones (SDD) e ingeniería de prompts.", "hero.cv": "Descargar CV", "work.title": "Proyectos", "about.text": "Trabajo de principio a fin: producto, interfaz, base de datos y despliegue. Soy experto en IA: desarrollo guiado por especificaciones (SDD), ingeniería de prompts y agentes que escriben y prueban código. Trabajo a diario con Claude Code, gestión de skills y servidores MCP, y ayudo a equipos a desarrollar aplicaciones de forma rápida con IA. Me interesan las herramientas que simplifican trabajo real, como administrar una comunidad de vecinos o abrir un negocio en la web.", live: "Ver en vivo", repo: "Ver código", lang: "EN", theme: "Tema" },
-  en: { "nav.work": "Work", "nav.contact": "Contact", "hero.role": "Web and app developer, AI expert. I design, build and ship complete products with spec-driven development (SDD) and prompt engineering.", "hero.cv": "Download CV", "work.title": "Work", "about.text": "I work end to end: product, interface, database and deployment. I'm an AI expert: spec-driven development (SDD), prompt engineering and agents that write and test code. I work daily with Claude Code, skills management and MCP servers, and I help teams build applications fast with AI. I like tools that simplify real work, like running a residential community or getting a business online.", live: "View live", repo: "View code", lang: "ES", theme: "Theme" },
+  es: { "nav.work": "Proyectos", "nav.contact": "Contacto", "hero.role": "Desarrollo web y apps, experto en IA. Diseño, construyo y publico productos completos con desarrollo guiado por especificaciones (SDD) e ingeniería de prompts.", "hero.cv": "Descargar CV", "work.title": "Proyectos", "about.text": "Trabajo de principio a fin: producto, interfaz, base de datos y despliegue. Soy experto en IA: desarrollo guiado por especificaciones (SDD), ingeniería de prompts y agentes que escriben y prueban código. Trabajo a diario con Claude Code, gestión de skills y servidores MCP, y ayudo a equipos a desarrollar aplicaciones de forma rápida con IA. Me interesan las herramientas que simplifican trabajo real, como administrar una comunidad de vecinos o abrir un negocio en la web.", live: "Ver en vivo", app: "Abrir la app", repo: "Ver código", lang: "EN", theme: "Tema" },
+  en: { "nav.work": "Work", "nav.contact": "Contact", "hero.role": "Web and app developer, AI expert. I design, build and ship complete products with spec-driven development (SDD) and prompt engineering.", "hero.cv": "Download CV", "work.title": "Work", "about.text": "I work end to end: product, interface, database and deployment. I'm an AI expert: spec-driven development (SDD), prompt engineering and agents that write and test code. I work daily with Claude Code, skills management and MCP servers, and I help teams build applications fast with AI. I like tools that simplify real work, like running a residential community or getting a business online.", live: "View live", app: "Open the app", repo: "View code", lang: "ES", theme: "Theme" },
 };
 
 const store = {
@@ -51,7 +51,7 @@ function render() {
   const open = rows.querySelector("[aria-expanded=true]")?.dataset.id;
   rows.innerHTML = projects.map((p) => {
     const c = p[lang];
-    const links = [p.live && `<a href="${p.live}" rel="noopener">${t.live}</a>`, p.repo && `<a href="${p.repo}" rel="noopener">${t.repo}</a>`].filter(Boolean).join("");
+    const links = [p.live && `<a href="${p.live}" rel="noopener">${t.live}</a>`, p.app && `<a href="${p.app}" rel="noopener">${t.app}</a>`, p.repo && `<a href="${p.repo}" rel="noopener">${t.repo}</a>`].filter(Boolean).join("");
     return `<li class="row">
       <button class="row-head" type="button" data-id="${p.id}" aria-expanded="${open === p.id}" aria-controls="b-${p.id}">
         <span class="row-name">${names[p.id]}</span>
