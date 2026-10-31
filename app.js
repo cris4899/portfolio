@@ -15,7 +15,7 @@ const projects = [
     id: "vecinaria", year: "2026", stack: "React, Vite, Expo, Supabase, Tailwind",
     es: { role: "Gestión de comunidades", desc: "Plataforma para administrar fincas, pensada para despachos profesionales y comunidades autogestionadas. Web en React, app en iOS y Android, base de datos con pruebas pgTAP." },
     en: { role: "Community management", desc: "Platform to manage residential communities, for professional firms and self-managed buildings. React web app, iOS and Android app, database covered by pgTAP tests." },
-    live: "https://project-jmckh.vercel.app", repo: "",
+    live: "https://vecinaria-landing.vercel.app", repo: "",
   },
   {
     id: "jaquecapp", year: "2026", stack: "PWA, Vite, JavaScript, Firebase",
