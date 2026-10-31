@@ -7,6 +7,8 @@ body {
   -webkit-print-color-adjust: exact; print-color-adjust: exact;
 }
 a { color: inherit; text-decoration: none; }
+header { display: grid; grid-template-columns: 1fr 30mm; gap: 8mm; align-items: start; }
+.photo { width: 30mm; height: 37.5mm; object-fit: cover; display: block; }
 h1 { font-stretch: 62%; font-weight: 800; font-size: 40pt; line-height: 0.9; letter-spacing: -0.01em; }
 .role { font-weight: 600; margin-top: 6px; font-size: 11pt; }
 .contact { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; color: #4b535c; }
