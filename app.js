@@ -9,7 +9,7 @@ const projects = [
     id: "papeo", year: "2026", stack: "Expo, Next.js, Supabase, TypeScript",
     es: { role: "App móvil y panel", desc: "Monorepo con app móvil (Expo), panel de administración y landing (Next.js), sobre Supabase. Construido con especificaciones por fases y pruebas end-to-end." },
     en: { role: "Mobile app and dashboard", desc: "Monorepo with a mobile app (Expo), an admin dashboard and a landing page (Next.js), on Supabase. Built spec-first, with end-to-end tests." },
-    live: "https://www.mipapeo.es", app: "https://app.mipapeo.es", repo: "",
+    live: "", app: "https://www.mipapeo.es", repo: "", extraShot: "papeo-landing",
   },
   {
     id: "vecinaria", year: "2026", stack: "React, Vite, Expo, Supabase, Tailwind",
@@ -59,7 +59,10 @@ function render() {
       </button>
       <div class="row-body" id="b-${p.id}"><div><div class="row-inner">
         <div><p>${c.desc}</p>${links && `<div class="links">${links}</div>`}</div>
-        <img src="img/${p.id}.jpg" alt="${names[p.id]}" loading="lazy" onerror="this.outerHTML='<div class=&quot;shot-empty&quot;></div>'">
+        <div class="shots">
+          <img src="img/${p.id}.jpg" alt="${names[p.id]}" loading="lazy" onerror="this.outerHTML='<div class=&quot;shot-empty&quot;></div>'">
+          ${p.extraShot ? `<img src="img/${p.extraShot}.jpg" alt="${names[p.id]}, landing" loading="lazy">` : ""}
+        </div>
       </div></div></div>
     </li>`;
   }).join("");
